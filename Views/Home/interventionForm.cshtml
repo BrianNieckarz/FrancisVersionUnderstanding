@@ -1,0 +1,92 @@
+
+<div class = "container">
+
+<h3>
+      <span style="color:rgb(10, 101, 160); font-weight:bolder">INTERVENTIONS!!!<br></span> Welcome Customer
+      </h3>
+
+  @* <%= form.text_field(:author, :readonly=>true, :value =>@author) %> *@
+</div>
+
+
+ <br>
+ <p>                     
+        
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>
+        <span style="color:rgb(10, 101, 160); font-weight:bolder">FISRT<br></span>BUILDING
+      </h3>
+      <select style="max-width: 150px;" id="column_select" class="custom-select mb-0 mr-sm-0 mb-sm-0">
+         <option selected>column</option>
+        @* <%= @column.each do |e| %>
+                <option value="<%= e.id %>"><%= e.id %></option> *@
+               
+        <% end %>
+        <% end %>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h3>
+        <span style="color:rgb(10, 101, 160); font-weight:bolder">SECOND<br></span>BATTERY
+      </h3>
+      <select style="max-width: 150px;" id="battery_select" class="custom-select mb-0 mr-sm-0 mb-sm-0">
+        <option selected>Battery</option>
+        @* <%= @battery.each do |d| %>
+                <option value="<%= d.id %>"><%= d.id %></option> *@
+                
+        <% end %>
+        <% end %>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>
+        <span style="color:rgb(10, 101, 160); font-weight:bolder">FORTH<br></span>COLUMN
+      </h3>
+      <select style="max-width: 150px;" id="column_select" class="custom-select mb-0 mr-sm-0 mb-sm-0">
+         <option selected>column</option>
+        @* <%= @column.each do |e| %>
+                <option value="<%= e.id %>"><%= e.id %></option> *@
+               
+        <% end %>
+        <% end %>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h3>
+         <span style="color:rgb(10, 101, 160); font-weight:bolder">LAST<br></span>ELEVATOR
+      </h3>
+      <select style="max-width: 150px;" id="elevator_select" class="custom-select mb-0 mr-sm-0 mb-sm-0" <%= form.select(:elevatorID) do %> >
+        <option selected>elevator</option>
+        @* <%= @elevator.each do |f| %>
+                <option value="<%= f.id %>"><%= f.id %></option> *@
+
+        <% end %>
+        <% end %>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+
+      
+<p>
+
+</div>                                                     
+                    
+  <form method="post">
+  <input type="submit" name="submit" value="Submit" />
+</form>
+  
+
+
+
+  
