@@ -33,8 +33,18 @@
                         {
                         @* @if (signInManager.IsSignedIn(User)) *@
                         @* @if (User.Identity.isAuthenticated) *@
+                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Smarty">Smarty</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="product">Our Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="reviews">Customers reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Request Intervention</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="myProducts">My Products</a>
                         </li>
                         }
                     </ul>

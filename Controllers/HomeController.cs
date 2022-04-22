@@ -29,6 +29,23 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult product()
+    {
+        return View();
+    }
+    public IActionResult myProducts()
+    {
+        return View();
+    }
+     public IActionResult interventionForm()
+    {
+        return View();
+    }
+
+    public IActionResult reviews()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
@@ -80,20 +97,20 @@ public class HomeController : Controller
 
     // }
 
-    public async Task<IEnumerable<Building>> GetBuildingsAll()
-    {
-        List<Building> buildings = new List<Building>();
-        using (var httpClient = new HttpClient())
-        {
-            //HTTP GET request to the API
-            using (var response = await httpClient.GetAsync("https://deployweek8api.azurewebsites.net/api/column/exists/3"))
-            {
-                //data returned by the API is fetched from the code
-                string Get = await response.Content.ReadAsStringAsync();
-                //Deserialize the list to a List type object
-                buildings = JsonConvert.DeserializeObject<List<Building>>(Get);
-            }
-        }
-        return buildings;
-    }
+    // public async Task<IEnumerable<Building>> GetBuildingsAll()
+    // {
+    //     List<Building> buildings = new List<Building>();
+    //     using (var httpClient = new HttpClient())
+    //     {
+    //         //HTTP GET request to the API
+    //         using (var response = await httpClient.GetAsync("https://deployweek8api.azurewebsites.net/api/column/exists/3"))
+    //         {
+    //             //data returned by the API is fetched from the code
+    //             string Get = await response.Content.ReadAsStringAsync();
+    //             //Deserialize the list to a List type object
+    //             buildings = JsonConvert.DeserializeObject<List<Building>>(Get);
+    //         }
+    //     }
+    //     return buildings;
+    // }
 }

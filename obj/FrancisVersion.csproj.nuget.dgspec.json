@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brian\\CodeBoxx\\Week9Odyssey\\FrancisVersion\\FrancisVersion.csproj": {}
+    "C:\\Users\\Asus\\OneDrive\\Desktop\\New folder\\FrancisVersionUnderstanding\\FrancisVersion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brian\\CodeBoxx\\Week9Odyssey\\FrancisVersion\\FrancisVersion.csproj": {
+    "C:\\Users\\Asus\\OneDrive\\Desktop\\New folder\\FrancisVersionUnderstanding\\FrancisVersion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brian\\CodeBoxx\\Week9Odyssey\\FrancisVersion\\FrancisVersion.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\OneDrive\\Desktop\\New folder\\FrancisVersionUnderstanding\\FrancisVersion.csproj",
         "projectName": "FrancisVersion",
-        "projectPath": "C:\\Users\\brian\\CodeBoxx\\Week9Odyssey\\FrancisVersion\\FrancisVersion.csproj",
-        "packagesPath": "C:\\Users\\brian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brian\\CodeBoxx\\Week9Odyssey\\FrancisVersion\\obj\\",
+        "projectPath": "C:\\Users\\Asus\\OneDrive\\Desktop\\New folder\\FrancisVersionUnderstanding\\FrancisVersion.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\OneDrive\\Desktop\\New folder\\FrancisVersionUnderstanding\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\brian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
