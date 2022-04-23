@@ -1,5 +1,33 @@
 <h3>MY PRODUCTS</h3>
 
-<p>my elevators </p>
+<p>my buildings </p>
 
-<h1> Customer: @ViewBag.customer </h1>
+<ul>
+    @foreach (var building in ViewBag.building)
+    {
+        <h1> @ViewBag.building </h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
+
+<ul>
+    @foreach (var battery in ViewBag.battery)
+    {
+        <h1> @ViewBag.battery</h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
+<ul>
+    @foreach (var column in ViewBag.column)
+    {
+        <h1> @ViewBag.column </h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
+<ul>
+    @foreach (var elevator in ViewBag.elevator)
+    {
+        <h1> @ViewBag.elevator </h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>

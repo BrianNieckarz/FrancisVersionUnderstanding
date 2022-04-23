@@ -8,9 +8,7 @@
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </li>
-    <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="product">Our Products</a>
-                        </li>
+    
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="reviews">Customers reviews</a>
                         </li>
@@ -21,7 +19,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="myProducts">My Products</a>
                         </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="product">★ Your Products ★</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="product">★ Our Products ★</a>
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
