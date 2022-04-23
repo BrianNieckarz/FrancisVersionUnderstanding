@@ -33,14 +33,8 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult myProducts()
-    {
-        return View();
-    }
-     public IActionResult interventionForm()
-    {
-        return View();
-    }
+   
+    
 
     public IActionResult reviews()
     {
@@ -48,30 +42,142 @@ public class HomeController : Controller
     }
 
     
-    public async Task<ActionResult<IEnumerable<Customer>>> GetTest()
+    public async Task<ActionResult<IEnumerable<Customer>>> myProducts()
         {
-            using (var client = new HttpClient()) 
-            {
-                List<int> customersList = new List<int>();
-                var response = await client.GetAsync("https://localhost:7098/api/Batteries/List/5");
+            using (var bui = new HttpClient()) 
+            { 
+                List<dynamic> buildings = new List<dynamic>();
+                var response = await bui.GetAsync("https://localhost:7098/api/Buildings/List/5");
                 string jsonstring = await response.Content.ReadAsStringAsync();
-                dynamic customerList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
-                foreach(var customer in customerList){
-                    int cust_id = Convert.ToInt32(customer.id);
-                    customersList.Add(cust_id);
-                    Console.WriteLine(customer.id);
+                dynamic buildingList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var building in buildingList){
+                    
+                     buildings.Add(building);
+                    
+                    ViewBag.building = buildings;
+                    
                 }
-
-                Console.WriteLine(customerList);
-                    ViewBag.customer = customersList;
             }
+            using (var bat = new HttpClient()) 
+            { 
+                List<dynamic> batteries = new List<dynamic>();
+                var response = await bat.GetAsync("https://localhost:7098/api/batteries/List/5");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic batteriesList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var battery in batteriesList){
+                    
+                     batteries.Add(battery);
+                    
+                    ViewBag.batteries = batteries;
+                }    
                 // ViewBag.customer = stuff;
                 
                 
-            
+            }
+            using (var col = new HttpClient()) 
+            { 
+                List<dynamic> columns = new List<dynamic>();
+                var response = await col.GetAsync("https://localhost:7098/api/columns/List/2");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic columnsList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var column in columnsList){
+                    
+                     columns.Add(column);
+                    
+                    ViewBag.columns = columns;
+                }    
+                // ViewBag.customer = stuff;
+                
+                
+            }
+            using (var ele = new HttpClient()) 
+            { 
+                List<dynamic> elevators = new List<dynamic>();
+                var response = await ele.GetAsync("https://localhost:7098/api/elevators/List/12");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic elevatorsList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var elevator in elevatorsList){
+                    
+                     elevators.Add(elevator);
+                    
+                    ViewBag.elevators = elevators;
+                }    
+                // ViewBag.customer = stuff;
+                
+                
+            }
+
             return View();
-        }
         
+        }
+         public async Task<ActionResult<IEnumerable<Customer>>> interventionForm()
+        {
+            using (var bui = new HttpClient()) 
+            { 
+                List<dynamic> buildings = new List<dynamic>();
+                var response = await bui.GetAsync("https://localhost:7098/api/Buildings/List/5");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic buildingList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var building in buildingList){
+                    
+                     buildings.Add(building);
+                    
+                    ViewBag.building = buildings;
+                    
+                }
+            }
+            using (var bat = new HttpClient()) 
+            { 
+                List<dynamic> batteries = new List<dynamic>();
+                var response = await bat.GetAsync("https://localhost:7098/api/batteries/List/5");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic batteriesList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var battery in batteriesList){
+                    
+                     batteries.Add(battery);
+                    
+                    ViewBag.batteries = batteries;
+                }    
+                // ViewBag.customer = stuff;
+                
+                
+            }
+            using (var col = new HttpClient()) 
+            { 
+                List<dynamic> columns = new List<dynamic>();
+                var response = await col.GetAsync("https://localhost:7098/api/columns/List/2");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic columnsList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var column in columnsList){
+                    
+                     columns.Add(column);
+                    
+                    ViewBag.columns = columns;
+                }    
+                // ViewBag.customer = stuff;
+                
+                
+            }
+            using (var ele = new HttpClient()) 
+            { 
+                List<dynamic> elevators = new List<dynamic>();
+                var response = await ele.GetAsync("https://localhost:7098/api/elevators/List/12");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic elevatorsList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var elevator in elevatorsList){
+                    
+                     elevators.Add(elevator);
+                    
+                    ViewBag.elevators = elevators;
+                }    
+                // ViewBag.customer = stuff;
+                
+                
+            }
+
+            return View();
+        
+        }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

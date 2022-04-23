@@ -1,5 +1,38 @@
 <h3>MY PRODUCTS</h3>
 
-<p>my elevators </p>
+<h2>MY BUILDINGS</h2>
 
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+<ul>
+    @foreach (var building in ViewBag.building)
+    {
+        <h1> @building.id</h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
+<hr />
+<h2>MY BATTERIES</h2>
+<ul>
+    @foreach (var battery in ViewBag.batteries)
+    {
+        <h1> @battery.id</h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
+<hr />
+<h2>MY COLUMNS</h2>
+<ul>
+    @foreach (var column in ViewBag.columns)
+    {
+        <h1> @column.id </h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
+<hr />
+<h2>MY ELEVATORS</h2>
+<ul>
+    @foreach (var elevator in ViewBag.elevators)
+    {
+        <h1> @elevator.id </h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
+    }
+</ul>
