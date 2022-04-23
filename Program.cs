@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using FrancisVersion.Data;
 using System.Net;
 
+
+
 var url = "https://deployweek8api.azurewebsites.net/api/column/exists/3";
 
 using var client = new HttpClient();

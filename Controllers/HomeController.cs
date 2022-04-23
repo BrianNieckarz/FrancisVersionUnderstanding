@@ -47,6 +47,32 @@ public class HomeController : Controller
         return View();
     }
 
+    
+    public async Task<ActionResult<IEnumerable<Customer>>> GetTest()
+        {
+            using (var client = new HttpClient()) 
+            {
+                List<int> customersList = new List<int>();
+                var response = await client.GetAsync("https://localhost:7098/api/Batteries/List/5");
+                string jsonstring = await response.Content.ReadAsStringAsync();
+                dynamic customerList = JsonConvert.DeserializeObject<dynamic>(jsonstring);
+                foreach(var customer in customerList){
+                    int cust_id = Convert.ToInt32(customer.id);
+                    customersList.Add(cust_id);
+                    Console.WriteLine(customer.id);
+                }
+
+                Console.WriteLine(customerList);
+                    ViewBag.customer = customersList;
+            }
+                // ViewBag.customer = stuff;
+                
+                
+            
+            return View();
+        }
+        
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
