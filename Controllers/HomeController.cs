@@ -83,7 +83,7 @@ public class HomeController : Controller
 
                 batteries.Add(battery);
 
-
+                // To deploy
 
             }
             ViewBag.batteries = batteries;
