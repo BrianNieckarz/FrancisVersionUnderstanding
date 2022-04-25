@@ -59,8 +59,9 @@ public class HomeController : Controller
             foreach (var building in buildingList)
             {
                 buildings.Add(building);
-                ViewBag.buildings = buildings;
+                
             }
+            ViewBag.buildings = buildings;
 
             // ViewBag.customer = stuff;
         }
@@ -152,21 +153,28 @@ public class HomeController : Controller
             // ViewBag.customer = stuff;
         }
         // ViewBag.buildings = new List<dynamic?>();
-        using (var bat = new HttpClient())
+       using (var bat = new HttpClient())
         {
+
+
+            var client = new HttpClient();
+
+
             List<dynamic?> batteries = new List<dynamic?>();
             var response = await bat.GetAsync($"https://deployweek8api.azurewebsites.net/api/battery/batterylist/{currentUserEmail}/");
+            Console.WriteLine($"current email of the user {currentUserEmail}");
             string jsonstring = await response.Content.ReadAsStringAsync();
-            List<dynamic?> batteriesList = JsonConvert.DeserializeObject<List<dynamic?>>(jsonstring);
+            Console.WriteLine($"jsonstring variable = {jsonstring}");
+            dynamic? batteriesList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
             foreach (var battery in batteriesList)
             {
 
                 batteries.Add(battery);
 
-                ViewBag.batteries = batteries;
+
+
             }
-            // ViewBag.customer = stuff;
-            // comment
+            ViewBag.batteries = batteries;
 
         }
         using (var col = new HttpClient())
