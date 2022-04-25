@@ -3,7 +3,7 @@
 <h2>MY BUILDINGS</h2>
 
 <ul>
-    @foreach (var building in ViewBag.building)
+    @foreach (var building in ViewBag.buildings)
     {
         <h1> @building.id</h1>
         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventionForm">Click here to request and intervention for this product</a>
