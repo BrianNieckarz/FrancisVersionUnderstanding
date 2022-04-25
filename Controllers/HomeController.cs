@@ -47,23 +47,32 @@ public class HomeController : Controller
     {
         var currentUserEmail = User.Identity?.Name;
 
-        // using (var bui = new HttpClient())
-        // {
-        //     List<dynamic?> buildings = new List<dynamic?>();
-        //     var response = await bui.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
-        //     string jsonstring = await response.Content.ReadAsStringAsync();
-        //     dynamic? buildingsList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
-        //     foreach (var building in buildingsList)
-        //     {
-
-        //         buildings.Add(building);
-
-        //     }
-        //     ViewBag.buildings = buildings;
-        //     // ViewBag.customer = stuff;
+        using (var bat = new HttpClient())
+        {
 
 
-        // }
+            var client = new HttpClient();
+
+
+            List<dynamic?> buildings = new List<dynamic?>();
+            var response = await bat.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
+            Console.WriteLine($"current email of the user {currentUserEmail}");
+            string jsonstring = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"jsonstring variable = {jsonstring}");
+            dynamic? buildingList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
+            foreach (var building in buildingList)
+            {
+
+                buildings.Add(building);
+
+
+
+            }
+            ViewBag.buildings = buildings;
+            // ViewBag.customer = stuff;
+
+
+        }
         using (var bat = new HttpClient())
         {
 
@@ -134,23 +143,23 @@ public class HomeController : Controller
     {
         var currentUserEmail = User.Identity?.Name;
         
-        // using (var bui = new HttpClient())
+        using (var bui = new HttpClient())
 
-        // {
-        //     List<dynamic?> buildings = new List<dynamic?>();
-        //     var response = await bui.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
-        //     string jsonstring = await response.Content.ReadAsStringAsync();
-        //     dynamic? buildingList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
-        //     foreach (var building in buildingList)
-        //     {
+        {
+            List<dynamic?> buildings = new List<dynamic?>();
+            var response = await bui.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
+            string jsonstring = await response.Content.ReadAsStringAsync();
+            dynamic? buildingList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
+            foreach (var building in buildingList)
+            {
 
-        //         buildings.Add(building);
+                buildings.Add(building);
 
-        //         ViewBag.buildings = buildings;
+                ViewBag.buildings = buildings;
 
-        //     }
-        // }
-        // ViewBag.building = new List<dynamic?>();
+            }
+        }
+        ViewBag.building = new List<dynamic?>();
         using (var bat = new HttpClient())
         {
             List<dynamic?> batteries = new List<dynamic?>();
