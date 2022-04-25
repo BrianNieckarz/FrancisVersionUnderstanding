@@ -165,7 +165,7 @@ public class HomeController : Controller
                 ViewBag.batteries = batteries;
             }
             // ViewBag.customer = stuff;
-
+            // comment
 
         }
         using (var col = new HttpClient())
