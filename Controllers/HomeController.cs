@@ -135,20 +135,21 @@ public class HomeController : Controller
         var currentUserEmail = User.Identity?.Name;
 
         using (var bui = new HttpClient())
-
         {
+            var client = new HttpClient();
             List<dynamic?> buildings = new List<dynamic?>();
             var response = await bui.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
+            Console.WriteLine($"current email of the user {currentUserEmail}");
             string jsonstring = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"jsonstring variable = {jsonstring}");
             dynamic? buildingList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
             foreach (var building in buildingList)
             {
-
                 buildings.Add(building);
-
                 ViewBag.buildings = buildings;
-
             }
+
+            // ViewBag.customer = stuff;
         }
         // ViewBag.buildings = new List<dynamic?>();
         using (var bat = new HttpClient())
