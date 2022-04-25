@@ -47,31 +47,22 @@ public class HomeController : Controller
     {
         var currentUserEmail = User.Identity?.Name;
 
-        using (var bat = new HttpClient())
+        using (var bui = new HttpClient())
         {
-
-
             var client = new HttpClient();
-
-
             List<dynamic?> buildings = new List<dynamic?>();
-            var response = await bat.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
+            var response = await bui.GetAsync($"https://deployweek8api.azurewebsites.net/api/building/buildinglist/{currentUserEmail}/");
             Console.WriteLine($"current email of the user {currentUserEmail}");
             string jsonstring = await response.Content.ReadAsStringAsync();
             Console.WriteLine($"jsonstring variable = {jsonstring}");
             dynamic? buildingList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
-            foreach (var battery in buildingList)
+            foreach (var building in buildingList)
             {
-
-                buildings.Add(battery);
-
-
-
+                buildings.Add(building);
+                ViewBag.building = buildings;
             }
-            ViewBag.batteries = buildings;
+
             // ViewBag.customer = stuff;
-
-
         }
         using (var bat = new HttpClient())
         {
@@ -142,7 +133,7 @@ public class HomeController : Controller
     public async Task<ActionResult<IEnumerable<Customer>>> interventionForm()
     {
         var currentUserEmail = User.Identity?.Name;
-        
+
         using (var bui = new HttpClient())
 
         {
