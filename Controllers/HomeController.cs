@@ -150,7 +150,7 @@ public class HomeController : Controller
 
         //     }
         // }
-        ViewBag.building = new List<dynamic?>();
+        // ViewBag.building = new List<dynamic?>();
         using (var bat = new HttpClient())
         {
             List<dynamic?> batteries = new List<dynamic?>();
