@@ -59,7 +59,7 @@ public class HomeController : Controller
             foreach (var building in buildingList)
             {
                 buildings.Add(building);
-                ViewBag.building = buildings;
+                ViewBag.buildings = buildings;
             }
 
             // ViewBag.customer = stuff;
@@ -150,7 +150,7 @@ public class HomeController : Controller
 
             }
         }
-        ViewBag.building = new List<dynamic?>();
+        // ViewBag.buildings = new List<dynamic?>();
         using (var bat = new HttpClient())
         {
             List<dynamic?> batteries = new List<dynamic?>();
