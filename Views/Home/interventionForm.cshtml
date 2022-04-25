@@ -1,84 +1,143 @@
+<head>
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: crimson;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
 
-<div class = "container">
+<section>
+        <div class="container">
+                <div class="row no-gutters wow slideInUp" data-wow-duration="1s">
+                        <div class="col-md-12 home-form text-center">
+                                <br>
+                                <br>
+                                <br>
 
-<h3>
-      <span style="color:rgb(10, 101, 160); font-weight:bolder">INTERVENTIONS!!!<br></span> Welcome Customer
-      </h3>
+                                <div class="container">
 
-  @* <%= form.text_field(:author, :readonly=>true, :value =>@author) %> *@
-</div>
+                                        <h3>
+                                                <span
+                                                        style="color:rgb(10, 101, 160); font-weight:bolder">INTERVENTIONS!!!<br></span>
+                                                Welcome!
+                                        </h3>
 
+                                </div>
 
- <br>
- <p>                     
-        
-        </select>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h3>
-        <span style="color:rgb(10, 101, 160); font-weight:bolder">FISRT<br></span>BUILDING
-      </h3>
-      <select style="max-width: 150px;" id="column_select" class="custom-select mb-0 mr-sm-0 mb-sm-0">
-         <option selected>building</option>
-        @foreach (var building in ViewBag.building){
-                <option> @building.id </option>
-        }
-        </select>
-        <br>
-        <br>
-        <br>
-        <h3>
-        <span style="color:rgb(10, 101, 160); font-weight:bolder">SECOND<br></span>BATTERY
-      </h3>
-      <select style="max-width: 150px;" id="battery_select" class="custom-select mb-0 mr-sm-0 mb-sm-0">
-        <option selected>Battery</option>
-        @foreach (var battery in ViewBag.batteries){
-                <option> @battery.id </option>
-        }
-        </select>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h3>
-        <span style="color:rgb(10, 101, 160); font-weight:bolder">FORTH<br></span>COLUMN
-      </h3>
-      <select style="max-width: 150px;" id="column_select" class="custom-select mb-0 mr-sm-0 mb-sm-0">
-         <option selected>column</option>
-        @foreach (var column in ViewBag.columns){
-                <option> @column.id </option>
-        }
-        </select>
-        <br>
-        <br>
-        <br>
-        <h3>
-         <span style="color:rgb(10, 101, 160); font-weight:bolder">LAST<br></span>ELEVATOR
-      </h3>
-      <select style="max-width: 150px;" id="elevator_select" class="custom-select mb-0 mr-sm-0 mb-sm-0" <%= form.select(:elevatorID) do %> >
-        <option selected>elevator</option>
-        @foreach (var elevator in ViewBag.elevators){
-                <option> @elevator.id </option>
-        }
-        </select>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p>
+                                <br>
+                                <br>
+                                <br>
 
-      
-<p>
+                                <div class="select-building-type card card-default">
+                                        <div class="card-heading card-heading-transparent">
+                                                <label for="building-type" class="card-title">
+                                                        <h3>
+                                                                <span
+                                                                        style="color:rgb(10, 101, 160); font-weight:bolder">STEP
+                                                                        1 |</span> Select Building
+                                                        </h3>
+                                                </label>
+                                        </div>
+                                        <div class="card-block" style="margin: 20px">
+                                                <select style="max-width: 150px;" id="battery_select"
+                                                        class="custom-select mb-0 mr-sm-0 mb-sm-0">
+                                                        <%=form.select(:buildingID) do %> >
+                                                                <option selected>building</option>
+                                                                @foreach (var building in ViewBag.building)
+                                                                {
+                                                                        <option> @building.id </option>
+                                                                }
+                                                </select>
+                                        </div>
+                                </div>
 
-</div>                                                     
-                    
-  <form method="post">
-  <input type="submit" name="submit" value="Submit" />
-</form>
-  
+                                <br>
 
+                                <div class="select-building-type card card-default">
+                                        <div class="card-heading card-heading-transparent">
+                                                <label for="building-type" class="card-title">
+                                                        <h3>
+                                                                <span
+                                                                        style="color:rgb(10, 101, 160); font-weight:bolder">STEP
+                                                                        2 |</span> Select Battery
+                                                        </h3>
+                                                </label>
+                                        </div>
+                                        <div class="card-block" style="margin: 20px">
+                                                <select style="max-width: 150px;" id="battery_select"
+                                                        class="custom-select mb-0 mr-sm-0 mb-sm-0">
+                                                        <%=form.select(:batteryID) do %> >
+                                                                <option selected>Battery</option>
+                                                                @foreach (var battery in ViewBag.batteries)
+                                                                {
+                                                                        <option> @battery.id </option>
+                                                                }
+                                                </select>
+                                        </div>
+                                </div>
 
+                                <br>
 
-  
+                                <div class="select-building-type card card-default">
+                                        <div class="card-heading card-heading-transparent">
+                                                <label for="building-type" class="card-title">
+                                                        <h3>
+                                                                <span
+                                                                        style="color:rgb(10, 101, 160); font-weight:bolder">STEP
+                                                                        3 |</span> Select Column
+                                                        </h3>
+                                                </label>
+                                        </div>
+                                        <div class="card-block" style="margin: 20px">
+                                                <select style="max-width: 150px;" id="column_select"
+                                                        class="custom-select mb-0 mr-sm-0 mb-sm-0">
+                                                        <%=form.select(:columnID) do %> >
+                                                                <option selected>column</option>
+                                                                @foreach (var column in ViewBag.columns)
+                                                                {
+                                                                        <option> @column.id </option>
+                                                                }
+                                                </select>
+                                        </div>
+                                </div>
+
+                                <br>
+
+                                <div class="select-building-type card card-default">
+                                        <div class="card-heading card-heading-transparent">
+                                                <label for="building-type" class="card-title">
+                                                        <h3>
+                                                                <span
+                                                                        style="color:rgb(10, 101, 160); font-weight:bolder">STEP
+                                                                        4 |</span> Select Elevator
+                                                        </h3>
+                                                </label>
+                                        </div>
+                                        <div class="card-block" style="margin: 20px">
+                                                <select style="max-width: 150px;" id="elevator_select"
+                                                        class="custom-select mb-0 mr-sm-0 mb-sm-0"
+                                                        <%=form.select(:elevatorID) do %> >
+                                                        <option selected>elevator</option>
+                                                                @foreach (var elevator in ViewBag.elevators)
+                                                                {
+                                                                <option> @elevator.id </option>
+                                                                }
+                                                </select>
+                                        </div>
+                                </div>
+
+                                <br>
+
+                                <input type="submit" value="Submit">
+
+                        </div>
+                </div>
+
+        </div>
+</section>

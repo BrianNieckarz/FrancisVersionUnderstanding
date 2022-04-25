@@ -5,12 +5,12 @@ using System.Net;
 
 
 
-var url = "https://deployweek8api.azurewebsites.net/api/column/exists/3";
+// var url = "https://deployweek8api.azurewebsites.net/api/column/exists/3";
 
-using var client = new HttpClient();
-var content = await client.GetStringAsync(url);
+// using var client = new HttpClient();
+// var content = await client.GetStringAsync(url);
 
-Console.WriteLine(content);
+// Console.WriteLine(content);
 
 var builder = WebApplication.CreateBuilder(args);
 // var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection");;
