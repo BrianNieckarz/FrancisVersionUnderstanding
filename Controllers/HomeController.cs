@@ -60,15 +60,15 @@ public class HomeController : Controller
             string jsonstring = await response.Content.ReadAsStringAsync();
             Console.WriteLine($"jsonstring variable = {jsonstring}");
             dynamic? buildingList = JsonConvert.DeserializeObject<dynamic?>(jsonstring);
-            foreach (var battery in buildingList)
+            foreach (var building in buildingList)
             {
 
-                buildings.Add(battery);
+                buildings.Add(building);
 
 
 
             }
-            ViewBag.batteries = buildings;
+            ViewBag.buildings = buildings;
             // ViewBag.customer = stuff;
 
 
